@@ -5,7 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
+gem 'haml-rails'
 group :development, :test do
   gem 'sqlite3'
 end
@@ -41,3 +41,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
+group :test do
+  gem 'rspec-rails',group: :development
+  gem 'cucumber-rails',require: false
+  gem 'database_cleaner'
+end
