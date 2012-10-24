@@ -27,7 +27,7 @@ describe ProductsController do
     {
       name: 'test',
       description: 'test',
-      price: 300
+      price: 300,
     }
   end
 
