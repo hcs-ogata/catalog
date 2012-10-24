@@ -9,6 +9,9 @@
 %p
   %b Line summary:
   = @shop.line_summary
+%p
+  %b Image:
+  =image_tag(@shop.image_url) if @shop.image?
 
 = link_to 'Edit', edit_shop_path(@shop)
 \|

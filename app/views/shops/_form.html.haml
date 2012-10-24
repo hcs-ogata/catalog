@@ -15,5 +15,10 @@
   .field
     = f.label :line_summary
     = f.text_field :line_summary
+  .field
+    =f.label :image
+    =image_tag(@shop.image_url) if @shop.image?
+    =f.file_field :image
+    =f.hidden_field :image_cache
   .actions
     = f.submit 'Save'

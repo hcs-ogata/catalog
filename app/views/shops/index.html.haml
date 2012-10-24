@@ -5,6 +5,7 @@
     %th Name
     %th Description
     %th Line summary
+    %th Image
     %th
     %th
     %th
@@ -14,6 +15,7 @@
       %td= shop.name
       %td= shop.description
       %td= shop.line_summary
+      %th= image_tag(shop.image_url) if shop.image?
       %td= link_to 'Show', shop
       %td= link_to 'Edit', edit_shop_path(shop)
       %td= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' }
