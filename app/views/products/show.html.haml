@@ -1,15 +1,16 @@
 %p#notice= notice
 
-%p
+%p.name
   %b Name:
   = @product.name
-%p
-  %b Description:
-  =simple_format(@product.description)
-%p
+.description
+  %p
+    %b Description:
+    =simple_format(@product.description)
+%p.price
   %b Price:
   = @product.price
-%p
+%p.image
   %b image:
   = @product.image_tag(@product.image_url) if @product.image?
 
