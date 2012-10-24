@@ -6,6 +6,7 @@
 end
 
 前提 /^"(.*?)"リンクをクリックする$/ do |link_text|
+  #p page.body
   click_link link_text
 end
 
@@ -40,4 +41,52 @@ end
   end
 end
 
+
+
+
+
+
+
+
+
+
+
+
+
+前提 /^店舗管理用ページを開いている$/ do
+  visit "/shops"  
+end
+
+
+
+もし /^以下の内容で店舗情報を登録する:$/ do |table|
+  shop_info = table.hashes[0]
+  #p page.body
+  fill_in 'shop_name',with: shop_info['店舗名']
+  fill_in 'shop_description', with: shop_info['紹介文']
+  fill_in 'shop_line_summary',with: shop_info['取扱商品概要']
+  click_on 'Save'
+end
+  #table.hashes.each do |row|
+    #Product.create!(name: row['商品名'], description: row['説明'], price: row['価格'].to_i)
+  #end
+#end
   
+ならば /^"(.*?)"の店舗紹介ページが作成されていること$/ do |shop_name|
+  visit url_for(Shop.where(name: shop_name).first)
+  within 'p.name' do
+    page.should have_content(shop_name)
+  end
+end
+
+ならば /^紹介文が"(.*?)"となっていること$/ do |shop_description|
+  within 'div.description' do
+    page.should have_content(shop_description)
+  end
+end
+
+ならば /^取扱商品概要が"(.*?)"となっていること$/ do |shop_line_summary|
+  within 'p.line_summary' do
+    page.should have_content(shop_line_summary)
+  end
+end  

@@ -1,12 +1,13 @@
 %p#notice= notice
 
-%p
+%p.name
   %b Name:
   = @shop.name
-%p
-  %b Description:
-  = @shop.description
-%p
+.description  
+  %p
+    %b Description:
+    = @shop.description
+%p.line_summary
   %b Line summary:
   = @shop.line_summary
 %p
