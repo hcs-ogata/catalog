@@ -6,6 +6,7 @@
     %th Description
     %th Price
     %th image
+    %th recommend
     %th
     %th
     %th
@@ -16,6 +17,7 @@
       %td= simple_format(product.description)
       %td= product.price
       %td= image_tag(product.image_url) if product.image?
+      %th= product.recommend
       %td= link_to 'Show', product
       %td= link_to 'Edit', edit_product_path(product)
       %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }

@@ -13,6 +13,9 @@
 %p.image
   %b image:
   = @product.image_tag(@product.image_url) if @product.image?
+%p.recommend
+  %b recommend:
+  =@product.recommend
 
 = link_to 'Edit', edit_product_path(@product)
 \|
