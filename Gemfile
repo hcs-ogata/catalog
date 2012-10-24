@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'haml-rails'
 gem 'carrierwave'
+gem 'sass-rails-bootstrap'
+gem 'active_decorator'
 group :development, :test do
   gem 'sqlite3'
 end
